@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f0df">
+  <meta name="description" content="Hayder & Husna — Wedding Invitation">
+  <title>Hayder & Husna | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="petal petal-1">✿</div>
+  <div class="petal petal-2">✿</div>
+  <div class="petal petal-3">❀</div>
+  <div class="petal petal-4">✿</div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <div class="arabic">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</div>
+        <p class="eyebrow">WITH LOVE &amp; BLESSINGS</p>
+        <h1>Hayder <span>&amp;</span> Husna</h1>
+        <p class="subtitle">በተባረከው የኒካህ ሥነ-ሥርዓታችን ላይ እንድትገኙልን በታላቅ ደስታ እንጋብዛለን። <br> We warmly invite you to join
+          us for our blessed Nikah ceremony</p>
+
+        <div class="date-card">
+          <div><strong>30</strong><small>AUGUST</small></div>
+          <div class="line"></div>
+          <div><strong>2026</strong><small>SUNDAY • 6:00 PM</small></div>
+        </div>
+
+        <a class="scroll-btn" href="#invitation">View Invitation ↓</a>
+      </div>
+    </section>
+
+    <section class="section invitation" id="invitation">
+      <div class="section-title">
+        <span>OUR SPECIAL DAY</span>
+      </div>
+
+      <div class="card image-card">
+        <img src="invitation-card.png" alt="Hayder and Husna wedding invitation">
+      </div>
+
+      <div class="message-card">
+        <p class="amharic">
+          በአላህ ፈቃድ የሚካሄደውን የኒካህ ስነ-ሥርዓታችንን
+          ከእኛ ጋር በመሆን እንዲያስደስቱን በአክብሮት ጋብዘናል።
+          በዚህ የተቀደሰ የሕይወት ጉዞ ውስጥ የእርስዎ መገኘትና
+          ዱዓ ለእኛ ትልቅ በረከት ነው።
+        </p>
+
+        <p>
+          By the grace of Allah, we warmly invite you to join us for our blessed
+          Nikah ceremony. Your presence, prayers, and blessings will make this
+          special occasion even more meaningful as we begin this beautiful journey together.
+        </p>
+      </div>
+    </section>
+
+    <section class="section details">
+      <div class="section-title">
+        <span>ከእኛ ጋር ይሁኑ <br> JOIN US </span>
+        <h2> የኒካህ ሥነ-ሥርዓት ዝርዝሮች <br> Nikah Ceremony Details</h2>
+      </div>
+
+      <div class="details-grid">
+        <article class="detail-card">
+          <div class="icon">♡</div>
+          <h3>Date</h3>
+          <p>Sunday, August 30, 2026</p>
+          <p class="muted">24 ነሐሴ 2018 ዓ.ም.</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="icon">◷</div>
+          <h3>Time</h3>
+          <p>6:00 PM</p>
+          <p class="muted"> እባክዎ ትንሽ ቀድመው ይምጡ።<br> Please arrive a little early</p>
+        </article>
+
+        <article class="detail-card">
+          <div class="icon">⌖</div>
+          <h3>Venue</h3>
+          <p>ዲፖ 300 ሜትር ገባ ብሎ <br>
+            Dipo Metira</p>
+          <p class="muted">300 Galee</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section countdown-section">
+      <div class="section-title">
+        <span>COUNTING THE MOMENTS</span>
+        <h2>Until We Say “I Do”</h2>
+      </div>
+      <div class="countdown" id="countdown">
+        <div><strong id="days">00</strong><span>Days</span></div>
+        <div><strong id="hours">00</strong><span>Hours</span></div>
+        <div><strong id="minutes">00</strong><span>Minutes</span></div>
+        <div><strong id="seconds">00</strong><span>Seconds</span></div>
+      </div>
+    </section>
+
+    <section class="section location">
+      <div class="section-title">
+        <span>WE'LL BE WAITING FOR YOU</span>
+        <h2>Find the Venue</h2>
+      </div>
+
+      <div class="map-box">
+
+        <div class="map-icon">⌖</div>
+
+        <h3>ዲፖ 300 ሜትር</h3>
+
+        <p> ገባ ብሎ</p>
+
+        <p class="coordinates">
+          📍 7.685848, 36.839799
+        </p>
+
+        <!-- Google Maps Embedded Map -->
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps?q=7.685848,36.839799&z=15&output=embed" width="100%" height="400"
+            style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <!-- Directions Button -->
+        <button type="button" class="button direction-button" onclick="getDirections()"> አቅጣጫዎችን እና የጉዞ ጊዜን ያግኙ <br>
+          🧭 Get Directions & Travel Time
+        </button>
+
+        <p class="direction-note">የአሁኑ መገኛዎ የመንገዱን መስመር እና የጉዞ ጊዜን ለማስላት ጥቅም ላይ ይውላል። <br>
+          Your current location will be used to calculate the route and travel time.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="section rsvp">
+      <div class="section-title">
+        <span>YOUR PRESENCE MATTERS</span>
+        <h2>RSVP</h2>
+      </div>
+      <div class="rsvp-card">
+        <p>Please confirm your attendance with the family.</p>
+        <p class="amharic">እባክዎ መገኘትዎን ከቤተሰቡ ጋር ያረጋግጡ።</p>
+
+        <!-- Replace the phone number in script.js -->
+        <a class="button whatsapp" id="rsvpButton" href="#" target="_blank" rel="noopener">
+          Confirm Attendance
+        </a>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="arabic closing-arabic">بَارَكَ اللهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
+      </div>
+      <h2>Hayder &amp; Husna</h2>
+      <p>Thank you for being part of our beautiful beginning.</p>
+      <button class="share-btn" id="shareBtn">Share Invitation</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with ♡ for Hayder &amp; Husna • 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
