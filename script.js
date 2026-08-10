@@ -27,9 +27,9 @@ setInterval(updateCountdown, 1000);
 
 // Replace this number with the family's WhatsApp number in international format.
 // Example: 2519XXXXXXXX (do not include +, spaces, or leading 0).
-const rsvpPhone = "251954889050";
+const rsvpPhone = "251945052858";
 const rsvpText = encodeURIComponent(
-  "Hello Hayder & Husna, I would like to confirm my attendance for your wedding on August 30, 2026."
+  "Hello Hayder Ahmedin Ali & Husna Muhibu Nuri, I would like to confirm my attendance for your wedding on August 30, 2026."
 );
 document.getElementById("rsvpButton").href =
   `https://wa.me/${rsvpPhone}?text=${rsvpText}`;
@@ -37,7 +37,7 @@ document.getElementById("rsvpButton").href =
 document.getElementById("shareBtn").addEventListener("click", async () => {
   const shareData = {
     title: "Hayder & Husna — Wedding Invitation",
-    text: "You are invited to celebrate the wedding of Hayder & Husna on August 30, 2026.",
+    text: "You are invited to celebrate the wedding of Hayder Ahmedin Ali & Husna Muhibu Nuri on August 30, 2026.",
     url: window.location.href
   };
 
