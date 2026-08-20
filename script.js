@@ -57,11 +57,11 @@ document.getElementById("shareBtn").addEventListener("click", async () => {
 });
 
 function getDirections() {
-  const destination = "7.685848,36.839799";
+  // Boni International Hotel coordinates
+  const destination = "7.6713028,36.839189";
 
   // Check whether the browser supports location
   if (!navigator.geolocation) {
-    // Fallback: let Google Maps determine current location
     const mapsUrl =
       `https://www.google.com/maps/dir/?api=1` +
       `&destination=${encodeURIComponent(destination)}` +
@@ -73,7 +73,6 @@ function getDirections() {
 
   navigator.geolocation.getCurrentPosition(
     function (position) {
-
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
 
@@ -85,14 +84,11 @@ function getDirections() {
         `&destination=${encodeURIComponent(destination)}` +
         `&travelmode=driving`;
 
-      // Open Google Maps
       window.open(mapsUrl, "_blank");
     },
 
-    function (error) {
-
-      // If user denies location permission,
-      // Google Maps can still ask for location itself.
+    function () {
+      // If location permission is denied
       const mapsUrl =
         `https://www.google.com/maps/dir/?api=1` +
         `&destination=${encodeURIComponent(destination)}` +
@@ -108,3 +104,40 @@ function getDirections() {
     }
   );
 }
+
+
+const envelope = document.getElementById("envelope");
+
+let envelopeTimeout;
+
+envelope.addEventListener("mouseenter", () => {
+  clearTimeout(envelopeTimeout);
+
+  envelope.classList.add("letter-open");
+
+  // Automatically close after 3 seconds
+  envelopeTimeout = setTimeout(() => {
+    envelope.classList.remove("letter-open");
+  }, 3000);
+});
+
+envelope.addEventListener("mouseleave", () => {
+  clearTimeout(envelopeTimeout);
+
+  // Small delay before closing
+  envelopeTimeout = setTimeout(() => {
+    envelope.classList.remove("letter-open");
+  }, 700);
+});
+
+envelope.addEventListener("click", () => {
+  clearTimeout(envelopeTimeout);
+
+  envelope.classList.toggle("letter-open");
+
+  if (envelope.classList.contains("letter-open")) {
+    envelopeTimeout = setTimeout(() => {
+      envelope.classList.remove("letter-open");
+    }, 3000);
+  }
+});
