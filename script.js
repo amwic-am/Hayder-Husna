@@ -29,7 +29,7 @@ setInterval(updateCountdown, 1000);
 // Example: 2519XXXXXXXX (do not include +, spaces, or leading 0).
 const rsvpPhone = "251945052858";
 const rsvpText = encodeURIComponent(
-  "Hello Hayder Ahmedin Ali & Husna Muhibu Nuri, I would like to confirm my attendance for your wedding on August 30, 2026."
+  "ሰላም ሃይደር አህመዲን አሊ እና ሁስና ሙሂቡ ኑሪ፣ በነሐሴ 24 ቀን 2018 ዓ.ም. (August 30, 2026) በሚካሄደው የሰርጋችሁ ስነስራአት ላይ መገኘቴን በደስታ አረጋግጣለሁ። ከእናንተ ጋር ይህን ልዩ ቀን ለማክበር በመገኘቴ ደስተኛ ነኝ። ለሁለታችሁም የተባረከና የደስታ የጋብቻ ሕይወት እመኛለሁ። ❤️"
 );
 document.getElementById("rsvpButton").href =
   `https://wa.me/${rsvpPhone}?text=${rsvpText}`;
@@ -37,7 +37,7 @@ document.getElementById("rsvpButton").href =
 document.getElementById("shareBtn").addEventListener("click", async () => {
   const shareData = {
     title: "Hayder & Husna — Wedding Invitation",
-    text: "You are invited to celebrate the wedding of Hayder Ahmedin Ali & Husna Muhibu Nuri on August 30, 2026.",
+   text: "የተከበራችሁ ወዳጅ ዘመዶቻችን፣ የሃይደር አህመዲን አሊ እና የሁስና ሙሂቡ ኑሪ የሰርግ ስነስራአት ላይ እንድትገኙ በአክብሮት ተጋብዛችኋል። በነሐሴ 24 ቀን 2018 ዓ.ም. (August 30, 2026) ከእኛ ጋር ደስታችንን እንድትጋሩ እንጋብዛችኋለን። ከኒካህ ሥነ-ሥርዓቱ በኋላ በቦኒ ኢንተርናሽናል ሆቴል የእራት ግብዣ ተዘጋጅቷል። መገኘታችሁ ደስታችንን ይሞላል! ♡",
     url: window.location.href
   };
 
