@@ -1,13 +1,30 @@
-// Wedding date: August 30, 2026 at 6:00 PM (Ethiopia / East Africa Time)
+// =====================================================
+// WEDDING COUNTDOWN
+// August 30, 2026 — 6:00 PM Ethiopia / East Africa Time
+// =====================================================
+
 const weddingDate = new Date("2026-08-30T18:00:00+03:00");
 
 function updateCountdown() {
   const now = new Date();
-  const diff = weddingDate - now;
+  const diff = weddingDate.getTime() - now.getTime();
+
+  const countdown = document.getElementById("countdown");
+
+  if (!countdown) return;
 
   if (diff <= 0) {
-    document.getElementById("countdown").innerHTML =
-      '<div style="grid-column:1/-1;padding:35px;font-size:28px">Today is the special day! ♡</div>';
+    countdown.innerHTML = `
+      <div style="
+        grid-column:1/-1;
+        padding:35px;
+        font-size:28px;
+        text-align:center;
+      ">
+        Today is the special day! ♡
+      </div>
+    `;
+
     return;
   }
 
@@ -16,67 +33,172 @@ function updateCountdown() {
   const minutes = Math.floor((diff / 60000) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
 
-  document.getElementById("days").textContent = String(days).padStart(2, "0");
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+  const daysElement = document.getElementById("days");
+  const hoursElement = document.getElementById("hours");
+  const minutesElement = document.getElementById("minutes");
+  const secondsElement = document.getElementById("seconds");
+
+  if (daysElement) {
+    daysElement.textContent = String(days).padStart(2, "0");
+  }
+
+  if (hoursElement) {
+    hoursElement.textContent = String(hours).padStart(2, "0");
+  }
+
+  if (minutesElement) {
+    minutesElement.textContent = String(minutes).padStart(2, "0");
+  }
+
+  if (secondsElement) {
+    secondsElement.textContent = String(seconds).padStart(2, "0");
+  }
 }
 
+// Run immediately
 updateCountdown();
+
+// Update every second
 setInterval(updateCountdown, 1000);
 
-// Replace this number with the family's WhatsApp number in international format.
-// Example: 2519XXXXXXXX (do not include +, spaces, or leading 0).
-const rsvpPhone = "251945052858";
-const rsvpText = encodeURIComponent(
-  "ሰላም ሃይደር አህመዲን አሊ እና ሁስና ሙሂቡ ኑሪ፣ በነሐሴ 24 ቀን 2018 ዓ.ም. (August 30, 2026) በሚካሄደው የሰርጋችሁ ስነስራአት ላይ መገኘቴን በደስታ አረጋግጣለሁ። ከእናንተ ጋር ይህን ልዩ ቀን ለማክበር በመገኘቴ ደስተኛ ነኝ። ለሁለታችሁም የተባረከና የደስታ የጋብቻ ሕይወት እመኛለሁ። ❤️"
+
+// =====================================================
+// TELEGRAM RSVP
+// Telegram Username: @Hi_Dear
+// =====================================================
+
+const telegramUsername = "Hi_Dear";
+
+const telegramText = encodeURIComponent(
+  "Hello Hayder Ahmedin Ali & Husna Muhibu Nuri, " +
+  "I would like to confirm my attendance for your wedding on August 30, 2026."
 );
-document.getElementById("rsvpButton").href =
-  `https://wa.me/${rsvpPhone}?text=${rsvpText}`;
 
-document.getElementById("shareBtn").addEventListener("click", async () => {
-  const shareData = {
-    title: "Hayder & Husna — Wedding Invitation",
-   text: "የተከበራችሁ ወዳጅ ዘመዶቻችን፣ የሃይደር አህመዲን አሊ እና የሁስና ሙሂቡ ኑሪ የሰርግ ስነስራአት ላይ እንድትገኙ በአክብሮት ተጋብዛችኋል። በነሐሴ 24 ቀን 2018 ዓ.ም. (August 30, 2026) ከእኛ ጋር ደስታችንን እንድትጋሩ እንጋብዛችኋለን። ከኒካህ ሥነ-ሥርዓቱ በኋላ በቦኒ ኢንተርናሽናል ሆቴል የእራት ግብዣ ተዘጋጅቷል። መገኘታችሁ ደስታችንን ይሞላል! ♡",
-    url: window.location.href
-  };
+const rsvpButton = document.getElementById("rsvpButton");
 
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-    } catch (_) {}
-  } else {
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      document.getElementById("shareBtn").textContent = "Link Copied ✓";
-      setTimeout(() => document.getElementById("shareBtn").textContent = "Share Invitation", 2200);
-    } catch (_) {
-      alert("Copy this page URL from your browser to share the invitation.");
+if (rsvpButton) {
+  rsvpButton.href =
+    `https://t.me/${telegramUsername}?text=${telegramText}`;
+}
+
+
+// =====================================================
+// SHARE INVITATION
+// =====================================================
+
+const shareButton = document.getElementById("shareBtn");
+
+if (shareButton) {
+
+  shareButton.addEventListener("click", async () => {
+
+    const shareData = {
+      title: "Hayder & Husna — Wedding Invitation",
+
+      text:
+  "Dear family and friends, " +
+  "you are warmly invited to attend the wedding ceremony of " +
+  "Hayder Ahmedin Ali & Husna Muhibu Nuri. " +
+  "The wedding will take place on August 30, 2026. " +
+  "We invite you to join us and share in our happiness. " +
+  "After the Nikah ceremony, a dinner reception will be held at Boni International Hotel. " +
+  "Your presence will make our celebration even more special! ♡",
+
+      url: window.location.href
+    };
+
+
+    // ---------------------------------------------
+    // Mobile / Modern Browser Share
+    // ---------------------------------------------
+
+    if (navigator.share) {
+
+      try {
+
+        await navigator.share(shareData);
+
+      } catch (error) {
+
+        // User cancelled share
+        console.log("Share cancelled.");
+
+      }
+
+      return;
     }
-  }
-});
+
+
+    // ---------------------------------------------
+    // Clipboard Fallback
+    // ---------------------------------------------
+
+    try {
+
+      await navigator.clipboard.writeText(window.location.href);
+
+      shareButton.textContent = "Link Copied ✓";
+
+      setTimeout(() => {
+
+        shareButton.textContent = "Share Invitation";
+
+      }, 2200);
+
+    } catch (error) {
+
+      alert(
+        "Copy this page URL from your browser to share the invitation."
+      );
+
+    }
+
+  });
+
+}
+
+
+// =====================================================
+// GOOGLE MAPS DIRECTIONS
+// Boni International Hotel
+// =====================================================
 
 function getDirections() {
+
   // Boni International Hotel coordinates
   const destination = "7.6713028,36.839189";
 
-  // Check whether the browser supports location
+
+  // ---------------------------------------------
+  // Browser does not support Geolocation
+  // ---------------------------------------------
+
   if (!navigator.geolocation) {
+
     const mapsUrl =
       `https://www.google.com/maps/dir/?api=1` +
       `&destination=${encodeURIComponent(destination)}` +
       `&travelmode=driving`;
 
     window.open(mapsUrl, "_blank");
+
     return;
   }
 
+
+  // ---------------------------------------------
+  // Get Current Location
+  // ---------------------------------------------
+
   navigator.geolocation.getCurrentPosition(
+
     function (position) {
+
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
 
       const origin = `${latitude},${longitude}`;
+
 
       const mapsUrl =
         `https://www.google.com/maps/dir/?api=1` +
@@ -84,60 +206,122 @@ function getDirections() {
         `&destination=${encodeURIComponent(destination)}` +
         `&travelmode=driving`;
 
+
       window.open(mapsUrl, "_blank");
+
     },
 
+
+    // ---------------------------------------------
+    // Location Permission Denied / Error
+    // ---------------------------------------------
+
     function () {
-      // If location permission is denied
+
       const mapsUrl =
         `https://www.google.com/maps/dir/?api=1` +
         `&destination=${encodeURIComponent(destination)}` +
         `&travelmode=driving`;
 
       window.open(mapsUrl, "_blank");
+
     },
+
+
+    // ---------------------------------------------
+    // Location Settings
+    // ---------------------------------------------
 
     {
       enableHighAccuracy: true,
       timeout: 10000,
       maximumAge: 60000
     }
+
   );
+
 }
 
+
+// =====================================================
+// ENVELOPE / LETTER ANIMATION
+// =====================================================
 
 const envelope = document.getElementById("envelope");
 
 let envelopeTimeout;
 
-envelope.addEventListener("mouseenter", () => {
-  clearTimeout(envelopeTimeout);
 
-  envelope.classList.add("letter-open");
+// Make sure envelope exists
+if (envelope) {
 
-  // Automatically close after 3 seconds
-  envelopeTimeout = setTimeout(() => {
-    envelope.classList.remove("letter-open");
-  }, 3000);
-});
 
-envelope.addEventListener("mouseleave", () => {
-  clearTimeout(envelopeTimeout);
+  // ===================================================
+  // MOUSE ENTER
+  // ===================================================
 
-  // Small delay before closing
-  envelopeTimeout = setTimeout(() => {
-    envelope.classList.remove("letter-open");
-  }, 700);
-});
+  envelope.addEventListener("mouseenter", () => {
 
-envelope.addEventListener("click", () => {
-  clearTimeout(envelopeTimeout);
+    clearTimeout(envelopeTimeout);
 
-  envelope.classList.toggle("letter-open");
+    envelope.classList.add("letter-open");
 
-  if (envelope.classList.contains("letter-open")) {
+
+    // Automatically close after 3 seconds
+
     envelopeTimeout = setTimeout(() => {
+
       envelope.classList.remove("letter-open");
+
     }, 3000);
-  }
-});
+
+  });
+
+
+  // ===================================================
+  // MOUSE LEAVE
+  // ===================================================
+
+  envelope.addEventListener("mouseleave", () => {
+
+    clearTimeout(envelopeTimeout);
+
+
+    // Small delay before closing
+
+    envelopeTimeout = setTimeout(() => {
+
+      envelope.classList.remove("letter-open");
+
+    }, 700);
+
+  });
+
+
+  // ===================================================
+  // CLICK
+  // ===================================================
+
+  envelope.addEventListener("click", () => {
+
+    clearTimeout(envelopeTimeout);
+
+
+    envelope.classList.toggle("letter-open");
+
+
+    // If opened, automatically close after 3 seconds
+
+    if (envelope.classList.contains("letter-open")) {
+
+      envelopeTimeout = setTimeout(() => {
+
+        envelope.classList.remove("letter-open");
+
+      }, 3000);
+
+    }
+
+  });
+
+}
