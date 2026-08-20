@@ -258,3 +258,1021 @@ footer{text-align:center;border-top:1px solid var(--line);padding:22px;color:var
     grid-template-columns: 1fr;
   }
 }
+
+.additional-note{
+  margin-top:40px;
+  padding:28px;
+  border-radius:24px;
+  background:linear-gradient(135deg,#fff8f6,#fff1eb);
+  border:1px solid rgba(180,90,60,.18);
+  text-align:center;
+}
+
+.note-icon{
+  font-size:2.2rem;
+  margin-bottom:10px;
+}
+
+.additional-note h3{
+  margin-bottom:16px;
+  color:#7a3e2f;
+}
+
+.additional-note p{
+  line-height:1.8;
+  margin-bottom:14px;
+}
+
+.additional-note .highlight{
+  font-weight:700;
+  color:#8b3a2b;
+  font-size:1.05rem;
+}
+
+/* =========================================
+   DINNER INVITATION SECTION
+   ========================================= */
+
+.dinner-invitation {
+  width: 100%;
+  padding: 120px 20px 190px;
+  background: #faf7f1;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+   ========================================= */
+
+.dinner-card {
+  position: relative;
+
+  width: min(950px, 100%);
+  min-height: 600px;
+
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  perspective: 1400px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   BIG ENVELOPE
+   ========================================= */
+
+.big-envelope {
+  position: relative;
+
+  width: 900px;
+  min-height: 500px;
+
+  margin: 0 auto;
+
+  background: #eadcc9;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  /*
+     VERY IMPORTANT:
+     Must be visible so the letter
+     can come completely outside.
+  */
+  overflow: visible;
+
+  transform-style: preserve-3d;
+
+  box-shadow:
+    0 25px 70px rgba(80, 55, 30, 0.15);
+
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+
+  box-sizing: border-box;
+}
+
+.big-envelope:hover {
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 35px 90px rgba(80, 55, 30, 0.22);
+}
+
+
+/* =========================================
+   ENVELOPE BACK
+   ========================================= */
+
+.big-envelope-back {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eee2d1 0%,
+      #eadcc9 45%,
+      #dfcfb9 100%
+    );
+
+  border-radius: 18px;
+
+  z-index: 1;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(170, 130, 75, 0.15);
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   LETTER / FULL POSTER
+   ========================================= */
+
+.big-letter {
+  position: absolute;
+
+  left: 5%;
+  right: 5%;
+
+  bottom: 25px;
+
+  width: 90%;
+
+  /*
+     Enough height for ALL content.
+  */
+  height: 520px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffefa,
+      #fffdf8
+    );
+
+  border-radius: 10px;
+
+  border:
+    1px solid
+    rgba(170, 130, 75, 0.20);
+
+  box-shadow:
+    0 12px 35px
+    rgba(70, 50, 30, 0.12);
+
+  /*
+     Behind envelope front
+     while closed.
+  */
+  z-index: 3;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+
+  /*
+     CLOSED POSITION
+  */
+  transform:
+    translateY(300px);
+
+  transform-style: preserve-3d;
+
+  transition:
+    transform 1.35s cubic-bezier(.16, 1, .3, 1),
+    box-shadow 0.8s ease;
+
+  transition-delay: 0s;
+}
+
+
+/* =========================================
+   LETTER CONTENT
+   ========================================= */
+
+.letter-inner {
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  padding:
+    45px
+    55px
+    55px;
+
+  text-align: center;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+
+  scrollbar-color:
+    rgba(177, 138, 85, 0.45)
+    transparent;
+}
+
+
+/* Chrome / Edge scrollbar */
+
+.letter-inner::-webkit-scrollbar {
+  width: 5px;
+}
+
+.letter-inner::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.letter-inner::-webkit-scrollbar-thumb {
+  background:
+    rgba(177, 138, 85, 0.45);
+
+  border-radius: 10px;
+}
+
+
+/* =========================================
+   ADDITIONAL NOTE LABEL
+   ========================================= */
+
+.section-label {
+  margin-bottom: 14px;
+
+  color: #a17b4d;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   AMHARIC TITLE
+   ========================================= */
+
+.letter-inner h2 {
+  margin: 0;
+
+  color: #594536;
+
+  font-size: 28px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   GOLD DIVIDER
+   ========================================= */
+
+.gold-divider {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+
+  margin:
+    20px auto
+    28px;
+
+  color: #b18a55;
+
+  font-size: 20px;
+}
+
+.gold-divider::before,
+.gold-divider::after {
+  content: "";
+
+  width: 80px;
+
+  height: 1px;
+
+  background:
+    rgba(177, 138, 85, 0.35);
+}
+
+
+/* =========================================
+   LANGUAGE CONTENT
+   ========================================= */
+
+.language-block {
+  width: 100%;
+
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  color: #655548;
+
+  font-size: 15px;
+
+  line-height: 1.95;
+
+  text-align: center;
+}
+
+.language-block p {
+  margin:
+    0
+    0
+    20px;
+}
+
+.language-block strong {
+  color: #9b7040;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   CLOSING TEXT
+   ========================================= */
+
+.closing-text {
+  margin-top: 25px !important;
+
+  color: #9b7040;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   OROMO DIVIDER
+   ========================================= */
+
+.language-divider {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  width: 100%;
+
+  max-width: 650px;
+
+  margin:
+    35px auto;
+
+  color: #a17b4d;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 3px;
+}
+
+.language-divider::before,
+.language-divider::after {
+  content: "";
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(177, 138, 85, 0.30);
+}
+
+
+/* =========================================
+   OROMO TITLE
+   ========================================= */
+
+.oromo h3 {
+  margin:
+    0
+    0
+    18px;
+
+  color: #594536;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   LOCATION
+   ========================================= */
+
+.dinner-location {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+
+  width: fit-content;
+
+  max-width: 90%;
+
+  margin:
+    38px auto
+    5px;
+
+  padding:
+    16px
+    28px;
+
+  border-top:
+    1px solid
+    rgba(177, 138, 85, 0.28);
+
+  border-bottom:
+    1px solid
+    rgba(177, 138, 85, 0.28);
+
+  box-sizing: border-box;
+}
+
+.location-icon {
+  flex-shrink: 0;
+
+  color: #a17b4d;
+
+  font-size: 28px;
+
+  line-height: 1;
+}
+
+.dinner-location div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  text-align: left;
+}
+
+.dinner-location strong {
+  color: #594536;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+.dinner-location small {
+  color: #9b805e;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ENVELOPE TOP FLAP
+   ========================================= */
+
+.big-envelope-flap {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left:
+    450px solid transparent;
+
+  border-right:
+    450px solid transparent;
+
+  border-top:
+    240px solid #d9c7ad;
+
+  transform-origin:
+    top center;
+
+  transform-style: preserve-3d;
+
+  /*
+     Above letter while closed.
+  */
+  z-index: 8;
+
+  backface-visibility: hidden;
+
+  filter:
+    drop-shadow(
+      0 8px 10px
+      rgba(70, 50, 30, 0.08)
+    );
+
+  transition:
+    transform
+    0.9s
+    cubic-bezier(.22, 1, .36, 1);
+}
+
+
+/* =========================================
+   ENVELOPE FRONT TRIANGLE
+   ========================================= */
+
+.big-envelope-front {
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 0;
+
+  border-left:
+    450px solid transparent;
+
+  border-right:
+    450px solid transparent;
+
+  border-bottom:
+    250px solid #e4d2ba;
+
+  /*
+     Above letter when closed.
+  */
+  z-index: 6;
+
+  pointer-events: none;
+
+  /*
+     IMPORTANT:
+     We DO NOT move the triangle.
+     We only fade it out when opening.
+  */
+  opacity: 1;
+
+  transition:
+    opacity
+    0.45s
+    ease;
+}
+
+
+/* =========================================
+   ENVELOPE HEART
+   ========================================= */
+
+.big-envelope-heart {
+  position: absolute;
+
+  left: 50%;
+  top: 245px;
+
+  transform:
+    translate(-50%, -50%);
+
+  z-index: 10;
+
+  color: #a77b43;
+
+  font-size: 34px;
+
+  line-height: 1;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+
+/* =========================================
+   HOVER — STEP 1
+   OPEN FLAP
+   ========================================= */
+
+.big-envelope:hover
+.big-envelope-flap {
+
+  transform:
+    rotateX(180deg);
+
+  transition-delay:
+    0s;
+
+  /*
+     Once open, it goes behind letter.
+  */
+  z-index: 2;
+}
+
+
+/* =========================================
+   HOVER — STEP 2
+   HIDE FRONT
+   ========================================= */
+
+.big-envelope:hover
+.big-envelope-front {
+
+  opacity: 0;
+
+  /*
+     Put behind letter.
+  */
+  z-index: 1;
+
+  transition-delay:
+    0.35s;
+}
+
+
+/* =========================================
+   HOVER — STEP 3
+   LETTER COMES OUT
+   ========================================= */
+
+.big-envelope:hover
+.big-letter {
+
+  /*
+     FULL LETTER COMES
+     COMPLETELY OUT.
+  */
+  transform:
+    translateY(-330px);
+
+  /*
+     Above EVERYTHING.
+  */
+  z-index: 50;
+
+  box-shadow:
+    0 35px 80px
+    rgba(70, 50, 30, 0.24);
+
+  /*
+     Wait until flap opens
+     and triangle disappears.
+  */
+  transition-delay:
+    0.55s;
+}
+
+
+/* =========================================
+   HOVER — STEP 4
+   HIDE HEART
+   ========================================= */
+
+.big-envelope:hover
+.big-envelope-heart {
+
+  opacity: 0;
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.6);
+
+  transition-delay:
+    0.25s;
+}
+
+
+/* =========================================
+   IMPORTANT:
+   LETTER STAYS FULLY ABOVE
+   WHILE HOVERING
+   ========================================= */
+
+.big-envelope:hover
+.big-letter {
+
+  overflow: hidden;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================
+   MOUSE LEAVES
+   EVERYTHING RETURNS
+   ========================================= */
+
+.big-envelope .big-envelope-flap {
+  transition:
+    transform
+    0.9s
+    cubic-bezier(.22, 1, .36, 1);
+}
+
+.big-envelope .big-envelope-front {
+  transition:
+    opacity
+    0.5s
+    ease;
+}
+
+.big-envelope .big-letter {
+  transition:
+    transform
+    1.15s
+    cubic-bezier(.22, 1, .36, 1),
+    box-shadow
+    0.7s ease;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 950px) {
+
+  .dinner-invitation {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .big-envelope {
+    width: 100%;
+
+    min-height: 480px;
+  }
+
+  .big-envelope-flap {
+    border-left-width: 50vw;
+    border-right-width: 50vw;
+
+    border-top-width: 220px;
+  }
+
+  .big-envelope-front {
+    border-left-width: 50vw;
+    border-right-width: 50vw;
+
+    border-bottom-width: 235px;
+  }
+
+  .big-envelope:hover
+  .big-letter {
+
+    transform:
+      translateY(-315px);
+  }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 650px) {
+
+  .dinner-invitation {
+    padding:
+      100px
+      10px
+      160px;
+  }
+
+  .dinner-card {
+    min-height: 520px;
+  }
+
+  .big-envelope {
+    width: 100%;
+
+    min-height: 420px;
+
+    border-radius: 14px;
+  }
+
+
+  /* Letter */
+
+  .big-letter {
+    left: 3%;
+
+    right: 3%;
+
+    width: 94%;
+
+    height: 480px;
+
+    bottom: 20px;
+  }
+
+  .letter-inner {
+    padding:
+      32px
+      22px
+      40px;
+  }
+
+
+  /* Label */
+
+  .section-label {
+    font-size: 9px;
+
+    letter-spacing: 3px;
+  }
+
+
+  /* Title */
+
+  .letter-inner h2 {
+    font-size: 21px;
+
+    line-height: 1.55;
+  }
+
+
+  /* Text */
+
+  .language-block {
+    font-size: 14px;
+
+    line-height: 1.85;
+  }
+
+  .oromo h3 {
+    font-size: 18px;
+  }
+
+
+  /* Flap */
+
+  .big-envelope-flap {
+    border-left-width: 50vw;
+    border-right-width: 50vw;
+
+    border-top-width: 180px;
+  }
+
+
+  /* Front */
+
+  .big-envelope-front {
+    border-left-width: 50vw;
+    border-right-width: 50vw;
+
+    border-bottom-width: 190px;
+  }
+
+
+  /* Letter comes out */
+
+  .big-envelope:hover
+  .big-letter {
+
+    transform:
+      translateY(-275px);
+
+    transition-delay:
+      0.55s;
+  }
+
+
+  /* Heart */
+
+  .big-envelope-heart {
+    top: 195px;
+
+    font-size: 28px;
+  }
+
+
+  /* Location */
+
+  .dinner-location {
+    max-width: 100%;
+
+    padding:
+      14px
+      18px;
+  }
+
+  .dinner-location strong {
+    font-size: 13px;
+  }
+
+  .dinner-location small {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 420px) {
+
+  .dinner-card {
+    min-height: 490px;
+  }
+
+  .big-envelope {
+    min-height: 380px;
+  }
+
+  .big-letter {
+    height: 450px;
+  }
+
+  .letter-inner {
+    padding:
+      28px
+      18px
+      35px;
+  }
+
+  .letter-inner h2 {
+    font-size: 19px;
+  }
+
+  .language-block {
+    font-size: 13px;
+
+    line-height: 1.8;
+  }
+
+  .big-envelope:hover
+  .big-letter {
+
+    transform:
+      translateY(-245px);
+  }
+
+  .big-envelope-flap {
+    border-top-width: 160px;
+  }
+
+  .big-envelope-front {
+    border-bottom-width: 170px;
+  }
+
+  .big-envelope-heart {
+    top: 175px;
+
+    font-size: 26px;
+  }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .big-envelope,
+  .big-letter,
+  .big-envelope-flap,
+  .big-envelope-front,
+  .big-envelope-heart {
+
+    transition: none !important;
+  }
+}
+.big-envelope:hover .big-envelope-front {
+  opacity: 0;
+  z-index: 1;
+}
+
+.big-envelope:hover .big-letter {
+  transform: translateY(-330px);
+  z-index: 50;
+  transition-delay: 0.55s;
+}
